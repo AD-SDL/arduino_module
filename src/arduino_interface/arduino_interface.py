@@ -1,4 +1,4 @@
-"""Interface for controlling the python_template device/instrument/robot."""
+"""Interface for controlling the arduino device/instrument/robot."""
 
 from pathlib import Path
 
