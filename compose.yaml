@@ -8,9 +8,12 @@ services:
       tags:
         - ghcr.io/ad-sdl/arduino_module:latest
         - ghcr.io/ad-sdl/arduino_module:dev
+    privileged: true
+    env_file: .env
     volumes:
       - ./src:/home/app/arduino_module/src
       - ./tests:/home/app/arduino_module/tests
+      - ${DEVICE}:/dev/ttyACM0
     command: python -m arduino_module --port 2000
     ports:
       - 2000:2000
